@@ -18,7 +18,7 @@ export function CTASection({ onWaitlistClick }) {
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <button onClick={() => navigate('/demo')} className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-blue-700 font-bold rounded-xl shadow-xl hover:scale-105 transition-transform">
+          <button onClick={() => navigate('/demo/connect')} className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-blue-700 font-bold rounded-xl shadow-xl hover:scale-105 transition-transform">
             Explore Interactive Demo <ArrowRight className="w-5 h-5" />
           </button>
           <button onClick={onWaitlistClick} className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-blue-700 text-white font-medium rounded-xl hover:bg-blue-800 transition-colors">

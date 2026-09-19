@@ -30,7 +30,7 @@ export function Hero({ onWaitlistClick }) {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4">
-            <button onClick={() => navigate('/demo')} className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-xl shadow-lg shadow-blue-600/20 transition-all hover:-translate-y-0.5">
+            <button onClick={() => navigate('/demo/connect')} className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-xl shadow-lg shadow-blue-600/20 transition-all hover:-translate-y-0.5">
               Explore Interactive Demo <ArrowRight className="w-4 h-4" />
             </button>
             <button onClick={onWaitlistClick} className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white hover:bg-slate-50 border border-slate-200 text-slate-900 font-medium rounded-xl shadow-sm transition-all">

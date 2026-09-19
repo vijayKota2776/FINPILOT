@@ -38,7 +38,7 @@ export function Navbar({ onWaitlistClick }) {
       {/* Mobile Menu */}
       {mobileMenuOpen && (
         <div className="md:hidden absolute top-full left-0 w-full bg-white shadow-xl border-t py-4 px-6 flex flex-col gap-4">
-          <button onClick={() => navigate('/demo')} className="w-full text-center text-sm font-medium border border-slate-200 py-3 rounded-lg text-slate-900">Explore Demo</button>
+          <button onClick={() => navigate('/demo/connect')} className="w-full text-center text-sm font-medium border border-slate-200 py-3 rounded-lg text-slate-900">Explore Demo</button>
           <button onClick={onWaitlistClick} className="w-full text-center text-sm font-medium bg-slate-950 text-white py-3 rounded-lg">Join Waitlist</button>
         </div>
       )}

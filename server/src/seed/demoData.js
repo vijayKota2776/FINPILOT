@@ -19,14 +19,13 @@ export const dashboardData = {
     accountsReceivable: "₹14,80,000",
     accountsPayable: "₹9,42,000"
   },
-  cashFlowChart: [
-    { date: "Apr 1", amount: 420000 },
-    { date: "Apr 5", amount: 510000 },
-    { date: "Apr 10", amount: 480000 },
-    { date: "Apr 15", amount: 620000 },
-    { date: "Apr 20", amount: 560000 },
-    { date: "Apr 25", amount: 690000 },
-    { date: "Apr 30", amount: 678240 }
+  cashFlow: [
+    { month: "Jan", inflow: 850000, outflow: 620000 },
+    { month: "Feb", inflow: 910000, outflow: 750000 },
+    { month: "Mar", inflow: 1100000, outflow: 890000 },
+    { month: "Apr", inflow: 1245000, outflow: 832000 },
+    { month: "May", inflow: 1050000, outflow: 780000 },
+    { month: "Jun", inflow: 1320000, outflow: 910000 }
   ]
 };
 
