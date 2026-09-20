@@ -25,8 +25,11 @@ export function Navbar({ onWaitlistClick }) {
         </div>
         
         <div className="hidden md:flex gap-4 items-center">
-          <button onClick={onWaitlistClick} className="text-sm font-medium bg-slate-950 hover:bg-slate-800 text-white px-5 py-2.5 rounded-full shadow-sm transition-all hover:shadow">
-            Join Waitlist
+          <button onClick={() => navigate('/login')} className="text-sm font-medium text-slate-700 hover:text-slate-900 transition-colors">
+            Log in
+          </button>
+          <button onClick={() => navigate('/signup')} className="text-sm font-medium bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-full shadow-sm transition-all hover:shadow">
+            Sign up
           </button>
         </div>
 
@@ -39,7 +42,8 @@ export function Navbar({ onWaitlistClick }) {
       {mobileMenuOpen && (
         <div className="md:hidden absolute top-full left-0 w-full bg-white shadow-xl border-t py-4 px-6 flex flex-col gap-4">
           <button onClick={() => navigate('/demo/connect')} className="w-full text-center text-sm font-medium border border-slate-200 py-3 rounded-lg text-slate-900">Explore Demo</button>
-          <button onClick={onWaitlistClick} className="w-full text-center text-sm font-medium bg-slate-950 text-white py-3 rounded-lg">Join Waitlist</button>
+          <button onClick={() => navigate('/login')} className="w-full text-center text-sm font-medium bg-slate-50 text-slate-900 py-3 rounded-lg border border-slate-200">Log in</button>
+          <button onClick={() => navigate('/signup')} className="w-full text-center text-sm font-medium bg-blue-600 text-white py-3 rounded-lg">Sign up</button>
         </div>
       )}
     </nav>
