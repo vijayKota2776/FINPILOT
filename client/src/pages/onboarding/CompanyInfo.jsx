@@ -18,7 +18,7 @@ export default function CompanyInfo() {
     setLoading(true);
     
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL || '${import.meta.env.VITE_API_URL || 'http://localhost:5001'}'}`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5001'}``, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

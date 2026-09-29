@@ -10,7 +10,7 @@ export const AuthProvider = ({ children }) => {
     // In future phases, this will hit /api/auth/me to restore session
     const checkAuth = async () => {
       try {
-        const response = await fetch(`${import.meta.env.VITE_API_URL || '${import.meta.env.VITE_API_URL || 'http://localhost:5001'}'}`, {
+        const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5001'}``, {
           credentials: 'include'
         });
         const data = await response.json();
@@ -34,7 +34,7 @@ export const AuthProvider = ({ children }) => {
 
   const logout = async () => {
     try {
-      await fetch(`${import.meta.env.VITE_API_URL || '${import.meta.env.VITE_API_URL || 'http://localhost:5001'}'}`, { method: 'POST', credentials: 'include' });
+      await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5001'}``, { method: 'POST', credentials: 'include' });
     } catch (e) {
       console.error(e);
     }
