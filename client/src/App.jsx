@@ -7,7 +7,7 @@ import StepConnect from './pages/demo/StepConnect';
 import StepProcess from './pages/demo/StepProcess';
 import Reconciliation from './pages/demo/Reconciliation';
 import Dashboard from './pages/demo/Dashboard';
-import AIAssistant from './pages/demo/AIAssistant';
+import DemoAIAssistant from './pages/demo/AIAssistant';
 
 // Auth imports
 import { AuthProvider } from './context/AuthContext';
@@ -68,7 +68,7 @@ function App() {
             <Route path="process" element={<StepProcess />} />
             <Route path="review" element={<Reconciliation />} />
             <Route path="understand" element={<Dashboard />} />
-            <Route path="act" element={<AIAssistant />} />
+            <Route path="act" element={<DemoAIAssistant />} />
           </Route>
         </Routes>
       </Router>
