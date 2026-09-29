@@ -43,8 +43,8 @@ app.use(cors({
 app.use(express.json({ limit: '10kb' })); // Limit body payload
 app.use(cookieParser());
 
-// Data sanitization against NoSQL query injection
-app.use(mongoSanitize());
+// Data sanitization against NoSQL query injection (Disabled for Express 5 compatibility)
+// app.use(mongoSanitize());
 
 // Data sanitization against XSS
 app.use(xss());
