@@ -18,6 +18,10 @@ import Signup from './pages/auth/Signup';
 import { WorkspaceProvider } from './context/WorkspaceContext';
 import WorkspaceLayout from './pages/dashboard/WorkspaceLayout';
 import MainDashboard from './pages/dashboard/MainDashboard';
+import Transactions from './pages/dashboard/Transactions';
+import Invoices from './pages/dashboard/Invoices';
+import AIAssistant from './pages/dashboard/AIAssistant';
+import DashboardReconciliation from './pages/dashboard/Reconciliation';
 
 // Onboarding imports
 import OnboardingLayout from './pages/onboarding/OnboardingLayout';
@@ -42,6 +46,10 @@ function App() {
             {/* Authenticated Dashboard Routes */}
             <Route path="/dashboard" element={<WorkspaceLayout />}>
               <Route index element={<MainDashboard />} />
+              <Route path="transactions" element={<Transactions />} />
+              <Route path="invoices" element={<Invoices />} />
+              <Route path="reconciliation" element={<DashboardReconciliation />} />
+              <Route path="ai" element={<AIAssistant />} />
             </Route>
             
             {/* Onboarding Routes */}

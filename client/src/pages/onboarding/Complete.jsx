@@ -1,8 +1,17 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { WorkspaceContext } from '../../context/WorkspaceContext';
 
 export default function Complete() {
   const navigate = useNavigate();
+  const { refreshWorkspaces } = useContext(WorkspaceContext);
+  const [loading, setLoading] = useState(false);
+
+  const handleGoToDashboard = async () => {
+    setLoading(true);
+    await refreshWorkspaces();
+    navigate('/dashboard');
+  };
 
   return (
     <div className="p-16 text-center">
@@ -33,10 +42,11 @@ export default function Complete() {
       </div>
 
       <button
-        onClick={() => navigate('/dashboard')}
-        className="px-10 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl shadow-xl shadow-blue-600/20 transition-all hover:-translate-y-1"
+        onClick={handleGoToDashboard}
+        disabled={loading}
+        className="px-10 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl shadow-xl shadow-blue-600/20 transition-all hover:-translate-y-1 disabled:opacity-50 disabled:hover:translate-y-0"
       >
-        Go to Dashboard
+        {loading ? 'Entering Workspace...' : 'Go to Dashboard'}
       </button>
     </div>
   );

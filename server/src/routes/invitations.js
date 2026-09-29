@@ -4,7 +4,9 @@ import { Invitation } from '../models/Invitation.js';
 import { CompanyMember } from '../models/CompanyMember.js';
 import { AuditLog } from '../models/AuditLog.js';
 import { authenticateUser } from '../middleware/auth.js';
+import mongoose from 'mongoose';
 import { requireWorkspaceMember, requirePermission } from '../middleware/authorization.js';
+import { sendWorkspaceInvitation } from '../services/email.service.js';
 
 const router = express.Router({ mergeParams: true }); // Allows accessing :companyId from parent router
 
@@ -52,7 +54,19 @@ router.post('/', authenticateUser, requireWorkspaceMember, requirePermission('in
       metadata: { email, role }
     });
 
+    // Fetch company to get name
+    const company = await mongoose.model('Company').findById(companyId);
+
     // In a real app, send an email with the unhashed `token` here
+    const clientUrl = process.env.CLIENT_URL || 'http://localhost:5173';
+    const joinUrl = `${clientUrl}/join/${token}`;
+    
+    await sendWorkspaceInvitation(
+      email,
+      company ? company.name : 'A Workspace',
+      req.user.name,
+      joinUrl
+    );
 
     res.status(201).json({ success: true, data: invitation });
   } catch (error) {

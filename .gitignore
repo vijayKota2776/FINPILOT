@@ -7,3 +7,4 @@ build/
 
 .mongo-data/
 
+atlas-credentials.env

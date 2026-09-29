@@ -37,6 +37,7 @@ export default function Signup() {
     } finally {
       setLoading(false);
     }
+    
   };
 
   return (
