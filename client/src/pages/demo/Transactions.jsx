@@ -5,7 +5,7 @@ export default function Transactions() {
   const [transactions, setTransactions] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:5001/api/demo/transactions')
+    fetch(`${import.meta.env.VITE_API_URL || '${import.meta.env.VITE_API_URL || 'http://localhost:5001'}'}`)
       .then(res => res.json())
       .then(json => setTransactions(json))
       .catch(err => console.error(err));

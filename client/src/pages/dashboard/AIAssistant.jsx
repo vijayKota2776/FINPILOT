@@ -49,7 +49,7 @@ export default function AIAssistant() {
     setIsLoading(true);
 
     try {
-      const response = await fetch(`http://localhost:5001/api/companies/${activeCompany._id}/ai/chat`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5001'}/api/companies/${activeCompany._id}/ai/chat`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

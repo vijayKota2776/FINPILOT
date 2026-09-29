@@ -61,7 +61,7 @@ export default function MainDashboard() {
     
     setError(null);
     try {
-      const response = await fetch(`http://localhost:5001/api/companies/${activeCompany._id}/dashboard?period=${period}`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5001'}/api/companies/${activeCompany._id}/dashboard?period=${period}`, {
         credentials: 'include'
       });
       const data = await response.json();

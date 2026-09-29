@@ -63,7 +63,7 @@ export default function Invoices() {
       if (search) params.append('search', search);
       if (status !== 'ALL') params.append('status', status);
       
-      const response = await fetch(`http://localhost:5001/api/companies/${activeCompany._id}/invoices?${params.toString()}`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5001'}/api/companies/${activeCompany._id}/invoices?${params.toString()}`, {
         credentials: 'include'
       });
       const result = await response.json();

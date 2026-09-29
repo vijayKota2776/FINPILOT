@@ -14,7 +14,7 @@ export default function KYCVerification() {
     
     try {
       if (companyId && companyId !== 'mock_company_123') {
-        await fetch(`http://localhost:5001/api/companies/${companyId}/simulate-kyc`, {
+        await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5001'}/api/companies/${companyId}/simulate-kyc`, {
           method: 'POST',
           credentials: 'include'
         });

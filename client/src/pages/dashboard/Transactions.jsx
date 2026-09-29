@@ -48,7 +48,7 @@ export default function Transactions() {
       if (type !== 'ALL') params.append('type', type);
       if (category !== 'ALL') params.append('category', category);
       
-      const response = await fetch(`http://localhost:5001/api/companies/${activeCompany._id}/transactions?${params.toString()}`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5001'}/api/companies/${activeCompany._id}/transactions?${params.toString()}`, {
         credentials: 'include'
       });
       const data = await response.json();
@@ -75,7 +75,7 @@ export default function Transactions() {
 
   const updateCategory = async (id, newCategory) => {
     try {
-      const response = await fetch(`http://localhost:5001/api/companies/${activeCompany._id}/transactions/${id}`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5001'}/api/companies/${activeCompany._id}/transactions/${id}`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include',
