@@ -12,7 +12,7 @@ export const WorkspaceProvider = ({ children }) => {
   const fetchCompanies = async () => {
     setLoading(true);
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5001'}``, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5001'}`, {
         credentials: 'include'
       });
       const data = await response.json();

@@ -9,7 +9,7 @@ export default function Dashboard() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5001'}``)
+    fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5001'}`)
       .then(res => res.json())
       .then(json => setData(json))
       .catch(err => console.error(err));
